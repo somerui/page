@@ -6,11 +6,10 @@
 		<meta http-equiv="Content-Type" content="text/html">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>somerui here.</title>
-	<link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/style.css" />
 	</head>
 	<body>
-		<main>
+		<div class="main">
 			<div id="title" >
 				somerui
 			</div>
@@ -59,25 +58,19 @@
     </div>
 <a href="/more.html" target="_blank" rel="noopener" style="color: #000;">More Link</a>
     <script>
-        // 获取元素
         const openDialogLink = document.getElementById('openDialogLink');
         const closeDialog = document.getElementById('closeDialog');
         const dialog = document.getElementById('dialog');
         const overlay = document.getElementById('overlay');
-
-        // 打开弹窗
         openDialogLink.onclick = function(event) {
-            event.preventDefault(); // 防止默认链接跳转
+            event.preventDefault();
             dialog.style.display = 'block';
             overlay.style.display = 'block';
         }
-
-        // 关闭弹窗
         closeDialog.onclick = function() {
             dialog.style.display = 'none';
             overlay.style.display = 'none';
         }
-
     </script>
 
 			</div>
@@ -85,7 +78,7 @@
 	</div>
 			
 		</div>
-	</main>
+	</div>
 	
 
 </body>
