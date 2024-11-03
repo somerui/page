@@ -1,7 +1,7 @@
 	
 @font-face {
-	font-family: 'Exo';
-	src: url(/Exo.TTF);
+	font-family: 'Cascadia Mono';
+	src: url(/Cascadia Mono.TTF);
 }
 
 
@@ -27,14 +27,14 @@ body {
 	font-size: 150%;
 }
 
-main {
-	font-family: 'Exo', sans-serif;
+.main {
+	font-family: 'Cascadia Mono', sans-serif;
 	color: rgb(192,192,192);
 	line-height: 1.5em;
 }
 
 #title {
-	font-family: 'Exo', sans-serif;
+	font-family: 'Cascadia Mono', sans-serif;
 	font-size: 1.5em;
 	padding-bottom: 0.75em;
 	
