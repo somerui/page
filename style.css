@@ -1,3 +1,7 @@
+@font-face{
+	font-family: 'Cascadia Code';
+	src: url('/CascadiaCode') 
+}
 html, body {
 	margin: 0;
 	padding: 0;
