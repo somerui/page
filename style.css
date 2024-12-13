@@ -1,7 +1,7 @@
 	
 @font-face {
-	font-family: 'Exo';
-	src: url(/Exo.TTF);
+	font-family: 'CascadiaCode';
+	src: url(/CascadiaCode.ttf);
 }
 
 
@@ -12,15 +12,10 @@ html, body {
 }
 
 body {
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
-	background-color: #000000;
-	background-repeat: no-repeat;
-  	background-position: center center;
-	background-size: 768px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: #000;
 	height: 100vh;
 	width: 100vw;
 	font-size: 150%;
@@ -48,7 +43,7 @@ body {
 }
 
 #dialog {
-    display: none; /* 初始隐藏 */
+    display: none;
     position: fixed;
     left: 50%;
     top: 50%;
@@ -112,6 +107,6 @@ a:hover:before {
 	transform: scaleX(1);
 }
 
-crossline {
+.crossline {
 	border-bottom:1px solid #CCC;
 }
