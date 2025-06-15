@@ -1,59 +1,149 @@
 <!DOCTYPE html>
 <html>
-    <head>
-
-        <meta charset="UTF-8">
-		<meta http-equiv="Content-Type" content="text/html">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>somerui here.</title>
-        <link rel="icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" type="text/css" href="/css/font.css" />
-        <link rel="stylesheet" type="text/css" href="/css/style.css">
-        <style>
-            body{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-position: center;
-                background-color: #000;
-                background-image: url(/img/bg.png);
-                background-repeat: no-repeat;
-                
-                -webkit-backdrop-filter: blur(10px);
-                backdrop-filter: blur(10px);
-            }
-            .donate{
-                align-items: center;
-                height: auto;
-                width: 100%;
-                object-fit: cover;
-            }
-        </style>
-    </head>
-
-    <body>
-        <main>
-            <div id="links" class="donate">
-				<h1>Donation</h1>
-                <div class="lnk">
-                    <h4>Donate platforms</h4>
-                    <p>
-                        <a href="https://app.unifans.io/c/somerui" target="_blank">UniFans(support PayPal & cryptocurrencies, recommend for CN Mainland fans)</a></br>
-                    </p>
-                    
-                </div>
-                <div class="crossline"></div>
-                <div class="lnk">
-                    <h3>CRYPTOCURRENCIES</h3>
-                    <p>ETH:0xb8aF657B51C1B423CEF996f6da0344EdD363c312</br>
-                        BTC(Legacy):1DnhMwH4iva5DPyuaTh7jacrHkJyRNjc3N</br>
-                        BTC(Nested SegWit):34KkrRCJbY3jMLLZf94BWauaCuFFaxMhRf</br>
-                        LTC:LP3SirhBYN6ekyRfxVP9ibUcJdty4q4rJ9<br>
-                        SOL:Hw8dRW4D6wTUm1Dk6F5TNaXqCKh7DxeDs8BiCn2msVZQ
-                    </p>
-                </div>
-                <a href="/index.html" style="color: #7f7f7f;">Back</a>
-			</div>
-        </main>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>somerui here.</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    
+    <!-- Exo Regular 字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --main-padding: clamp(20px, 5vw, 40px);
+            --title-size: clamp(1.5rem, 6vw, 2.5rem);
+            --text-size: clamp(0.9rem, 3vw, 1.1rem);
+            --link-size: clamp(1rem, 4vw, 1.2rem);
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            background-image: url(/img/bg.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            min-height: 100vh;
+            margin: 0;
+            padding: var(--main-padding);
+            box-sizing: border-box;
+            font-family: 'Exo', sans-serif;
+            color: white;
+        }
+        
+        main {
+            width: min(100%, 800px);
+            padding: var(--main-padding);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(63, 63, 63, 0.5);
+            border-radius: 10px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+        
+        h1 {
+            font-size: var(--title-size);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        
+        h3, h4 {
+            font-weight: 400;
+            margin: 1.5rem 0 0.5rem;
+        }
+        
+        p {
+            font-size: var(--text-size);
+            line-height: 1.6;
+            margin: 0.5rem 0;
+        }
+        
+        .crossline {
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 1.5rem 0;
+        }
+        
+        a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-size: var(--link-size);
+        }
+        
+        a:hover {
+            opacity: 0.7;
+        }
+        
+        .back-link {
+            display: block;
+            margin-top: 2rem;
+            text-align: center;
+            color: #7f7f7f !important;
+        }
+        
+        .crypto-address {
+            font-family: monospace;
+            word-break: break-all;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 0.5rem;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 0.3rem 0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Donation</h1>
+        
+        <div class="donate-section">
+            <h4>Donate platforms</h4>
+            <p>
+                <a href="https://app.unifans.io/c/somerui" target="_blank" rel="noopener">
+                    UniFans (support PayPal & cryptocurrencies, recommend for CN Mainland fans)
+                </a>
+            </p>
+        </div>
+        
+        <div class="crossline"></div>
+        
+        <div class="crypto-section">
+            <h3>CRYPTOCURRENCIES</h3>
+            <p>
+                <strong>ETH:</strong><br>
+                <span class="crypto-address">0xb8aF657B51C1B423CEF996f6da0344EdD363c312</span>
+            </p>
+            <p>
+                <strong>BTC (Legacy):</strong><br>
+                <span class="crypto-address">1DnhMwH4iva5DPyuaTh7jacrHkJyRNjc3N</span>
+            </p>
+            <p>
+                <strong>BTC (Nested SegWit):</strong><br>
+                <span class="crypto-address">34KkrRCJbY3jMLLZf94BWauaCuFFaxMhRf</span>
+            </p>
+            <p>
+                <strong>LTC:</strong><br>
+                <span class="crypto-address">LP3SirhBYN6ekyRfxVP9ibUcJdty4q4rJ9</span>
+            </p>
+            <p>
+                <strong>SOL:</strong><br>
+                <span class="crypto-address">Hw8dRW4D6wTUm1Dk6F5TNaXqCKh7DxeDs8BiCn2msVZQ</span>
+            </p>
+        </div>
+        
+        <a href="/index.html" class="back-link">Back to Home</a>
+    </main>
+</body>
 </html>
