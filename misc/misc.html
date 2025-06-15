@@ -1,61 +1,142 @@
 <!DOCTYPE html>
 <html>
-    <head>
-
-        <meta charset="UTF-8">
-		<meta http-equiv="Content-Type" content="text/html">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>somerui here.</title>
-        <link rel="icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" type="text/css" href="/css/font.css" />
-        <link rel="stylesheet" type="text/css" href="/css/style.css">
-        <style>
-            body{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-position: center;
-                background-color: #000;
-                background-image: url(/img/bg.png);
-                background-repeat: no-repeat;
-                
-                -webkit-backdrop-filter: blur(10px);
-                backdrop-filter: blur(10px);
-            }
-            .contact{
-                align-items: center;
-                height: auto;
-                width: 100%;
-                object-fit: cover;
-            }
-        </style>
-    </head>
-
-    <body>
-        <main>
-            <div id="links" class="contact">
-				<h1>Miscellaneous</h1>
-                <div class="lnk">
-                    <h4>Contacts</h4>
-                    <p>
-                        <div class="lnk">
-                            <a href="mailto:somerui_@outlook.com" target="_blank" rel="noopener">Personal Mail</a>
-                        </div>
-                        
-                        
-                    </p>
-                    
-                </div>
-                <div class="crossline"></div>
-                <div class="lnk" >
-					
-                    <h4>Misc</h4>
-                    <p>GPG Fingerprint:</br>
-                        421AE80F82B230C0C8A6F48A114BF36DD2A85F10
-                    </p>
-                </div>
-                <a href="/index.html" style="color: #7f7f7f;">Back</a>
-			</div>
-        </main>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>somerui here.</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    
+    <!-- Exo Regular 字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --main-padding: clamp(20px, 5vw, 40px);
+            --title-size: clamp(1.5rem, 6vw, 2.5rem);
+            --text-size: clamp(0.9rem, 3vw, 1.1rem);
+            --link-size: clamp(1rem, 4vw, 1.2rem);
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            background-image: url(/img/bg.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            min-height: 100vh;
+            margin: 0;
+            padding: var(--main-padding);
+            box-sizing: border-box;
+            font-family: 'Exo', sans-serif;
+            color: white;
+        }
+        
+        main {
+            width: min(100%, 800px);
+            padding: var(--main-padding);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(63, 63, 63, 0.5);
+            border-radius: 10px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+        
+        h1 {
+            font-size: var(--title-size);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        
+        h4 {
+            font-weight: 400;
+            margin: 1.5rem 0 0.5rem;
+            font-size: var(--link-size);
+        }
+        
+        p {
+            font-size: var(--text-size);
+            line-height: 1.6;
+            margin: 0.5rem 0;
+        }
+        
+        .crossline {
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 1.5rem 0;
+        }
+        
+        a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-size: var(--link-size);
+        }
+        
+        a:hover {
+            opacity: 0.7;
+        }
+        
+        .back-link {
+            display: block;
+            margin-top: 2rem;
+            text-align: center;
+            color: #7f7f7f !important;
+        }
+        
+        .gpg-fingerprint {
+            font-family: monospace;
+            word-break: break-all;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 0.5rem;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 0.3rem 0;
+        }
+        
+        .contact-link {
+            display: inline-block;
+            margin: 0.5rem 0;
+            padding: 0.5rem 1rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Miscellaneous</h1>
+        
+        <div class="contact-section">
+            <h4>Contacts</h4>
+            <div class="contact-link">
+                <a href="mailto:somerui_@outlook.com" target="_blank" rel="noopener">
+                    Personal Mail: somerui_@outlook.com
+                </a>
+            </div>
+        </div>
+        
+        <div class="crossline"></div>
+        
+        <div class="misc-section">
+            <h4>Misc</h4>
+            <p><strong>GPG Fingerprint:</strong></p>
+            <p class="gpg-fingerprint">
+                421AE80F82B230C0C8A6F48A114BF36DD2A85F10
+            </p>
+        </div>
+        
+        <a href="/index.html" class="back-link">Back to Home</a>
+    </main>
+</body>
 </html>
