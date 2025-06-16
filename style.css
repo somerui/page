@@ -1,0 +1,92 @@
+:root {
+            --main-padding: clamp(20px, 5vw, 40px);
+            --title-size: clamp(2rem, 8vw, 3rem);
+            --link-size: clamp(1rem, 4vw, 1.2rem);
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            background-image: url(/bg.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50%;
+            background-attachment: fixed;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            min-height: 100vh;
+            margin: 0;
+            padding: var(--main-padding);
+            box-sizing: border-box;
+            font-family: 'Exo', sans-serif;
+        }
+        
+        main {
+            text-align: center;
+            color: white;
+            width: min(100%, 800px);
+            padding: var(--main-padding);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(63, 63, 63, 0.5);
+            border-radius: 10px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+        
+        #title {
+            font-size: var(--title-size);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        #links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: clamp(10px, 3vw, 15px);
+            margin-bottom: 2rem;
+        }
+        
+        a {
+    color: white;
+    text-decoration: none;
+    font-size: var(--link-size);
+    transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1); /* sine out 曲线 */
+    white-space: nowrap;
+    position: relative;
+    padding-bottom: 3px; /* 为下划线留出空间 */
+}
+
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1); /* sine out 曲线 */
+}
+
+    a:hover::after {
+        width: 100%;
+}
+        
+        .misc {
+            margin-top: 2rem;
+        }
+        
+        .misc h3, .misc h4 {
+            margin: 0.5rem 0;
+            font-weight: 400;
+        }
+        
+        .misc a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }

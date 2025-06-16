@@ -9,87 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --main-padding: clamp(20px, 5vw, 40px);
-            --title-size: clamp(2rem, 8vw, 3rem);
-            --link-size: clamp(1rem, 4vw, 1.2rem);
-        }
-        
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #000;
-            background-image: url(/img/bg.png);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            background-attachment: fixed;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            min-height: 100vh;
-            margin: 0;
-            padding: var(--main-padding);
-            box-sizing: border-box;
-            font-family: 'Exo', sans-serif;
-        }
-        
-        main {
-            text-align: center;
-            color: white;
-            width: min(100%, 800px);
-            padding: var(--main-padding);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background-color: rgba(63, 63, 63, 0.5);
-            border-radius: 10px;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-        }
-        
-        #title {
-            font-size: var(--title-size);
-            margin-bottom: 2rem;
-            font-weight: 400;
-        }
-        
-        #links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: clamp(10px, 3vw, 15px);
-            margin-bottom: 2rem;
-        }
-        
-        .lnk a {
-            color: white;
-            text-decoration: none;
-            font-size: var(--link-size);
-            transition: opacity 0.3s;
-            white-space: nowrap;
-        }
-        
-        .lnk a:hover {
-            opacity: 0.7;
-        }
-        
-        .misc {
-            margin-top: 2rem;
-        }
-        
-        .misc h3, .misc h4 {
-            margin: 0.5rem 0;
-            font-weight: 400;
-        }
-        
-        .misc a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <main>
@@ -116,7 +36,7 @@
                 <a href="https://www.youtube.com/@somerui7634" target="_blank" rel="noopener">YouTube</a>
             </div>
             <div class="lnk">
-                <a href="https://disboard.org/server/1238910189143326923" target="_blank" rel="noopener">Discord</a>
+                <a href="https://somerui.itch.io">itch.io</a>
             </div>
             <div class="lnk">
                 <a rel="me" href="https://mastodon.social/@somerui">Mastodon</a>
@@ -126,10 +46,11 @@
             <h3>Miscellaneous</h3>
             <h4>
                 <a href="/misc/donate.html">Support me</a><br>
-                <a href="/misc/misc.html">Misc</a>
+                <a href="/misc/misc.html">Misc</a><br>
+                <a href="https://legacy.somerui.xyz" target="_blank">Legacy Page(CN only)</a><br>
             </h4>
             <div class="lnk">
-                <a href="/misc/list.html" style="display: none;">Products</a><br>
+                
                 <a href="/PLZ-REMOVE-SITE.html" target="_self">sth for internet archive</a>
             </div>
         </div>
