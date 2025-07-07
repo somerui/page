@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hmmm...</title>
+    <style>
+
+body {
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	background-color: #000000;
+    background-size: 50vw auto;
+    background-repeat: no-repeat;
+    background-position: center;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 768px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	font-size: 150%;
+}
+        
+a {
+	color: #888888;
+	position: relative;
+	text-decoration: none;
+}
+
+
+a:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: #fff;
+	visibility: hidden;
+	-webkit-transform: scaleX(0);
+	-o-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	-o-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+
+a:hover:before {
+	visibility: visible;
+	-webkit-transform: scaleX(1);
+	-o-transform: scaleX(1);
+	transform: scaleX(1);
+}
+main {
+	font-family: 'Exo', sans-serif;
+	color: #888888;
+	line-height: 1.5em;
+}
+    </style>
+</head>
+<body>
+    <main>
+    <div class="title">
+        <h1>Why you scanned this QR Code and into this website?</h1>
+    </div>
+    <div id="links">
+        <p>
+            Well. Just watch it.</br>
+            I'm Jeffrey "somerui" Su, the owner of this site "somerui.xyz".
+        </p>
+        <p style="border: #fff;">Just try to view sth on <a href="/index.html" target="_blank">somerui.xyz</a>.
+        </p>
+    </div>
+</main>
+</body>
+</html>
