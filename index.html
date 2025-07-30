@@ -7,46 +7,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link rel="stylesheet" href="/style.css">
-    <script>
-function scaleMainContainer() {
-  const main = document.querySelector("main");
-  const padding = 40;
-  const screenWidth = window.innerWidth;
-  const screenHeight = window.innerHeight;
-
-  // 获取main实际宽度（包含padding和border）
-  const mainWidth = main.offsetWidth;
-  const mainHeight = main.offsetHeight;
-
-  // 判断是否超出横向或纵向
-  const isOverflowing =
-    mainWidth + padding * 2 > screenWidth || mainHeight + padding * 2 > screenHeight;
-
-  if (isOverflowing) {
-    const scaleX = (screenWidth - padding * 2) / mainWidth;
-    const scaleY = (screenHeight - padding * 2) / mainHeight;
-    const scale = Math.min(scaleX, scaleY, 1); // 防止放大，只缩小
-
-    main.style.transform = `scale(${scale})`;
-    main.style.transformOrigin = "top center";
-  } else {
-    main.style.transform = "scale(1)";
-  }
-    const resizeMain = () => {
+<script>
+  function resizeMainContainer() {
     const main = document.querySelector("main");
-    if (main) {
-      main.style.maxWidth = (window.innerWidth - 20) + "px";
-    }
-  };
+    if (!main) return;
 
-  window.addEventListener("DOMContentLoaded", resizeMain);
-  window.addEventListener("resize", resizeMain);
-}
+    const padding = 20; // 最小留边
+    const maxWidth = Math.min(800, window.innerWidth - padding * 2);
+    const maxHeight = window.innerHeight - padding * 2;
 
-// 初始化和窗口变化时调用
-window.addEventListener("load", scaleMainContainer);
-window.addEventListener("resize", scaleMainContainer);
+    // 限制 main 尺寸
+    main.style.maxWidth = maxWidth + "px";
+    main.style.maxHeight = maxHeight + "px";
+    main.style.overflowY = "auto";
+
+    // 居中显示并不占满整个屏幕
+    main.style.marginTop = padding + "px";
+    main.style.marginBottom = padding + "px";
+  }
+
+  // 初始化 & 动态监听
+  window.addEventListener("DOMContentLoaded", resizeMainContainer);
+  window.addEventListener("resize", resizeMainContainer);
+  window.addEventListener("orientationchange", resizeMainContainer);
 </script>
+
 
 <body>
     <main>
