@@ -32,6 +32,15 @@ function scaleMainContainer() {
   } else {
     main.style.transform = "scale(1)";
   }
+    const resizeMain = () => {
+    const main = document.querySelector("main");
+    if (main) {
+      main.style.maxWidth = (window.innerWidth - 20) + "px";
+    }
+  };
+
+  window.addEventListener("DOMContentLoaded", resizeMain);
+  window.addEventListener("resize", resizeMain);
 }
 
 // 初始化和窗口变化时调用
