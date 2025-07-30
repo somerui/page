@@ -1,12 +1,44 @@
 <html><head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>somerui here.</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link rel="stylesheet" href="/style.css">
+    <script>
+function scaleMainContainer() {
+  const main = document.querySelector("main");
+  const padding = 40;
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+
+  // 获取main实际宽度（包含padding和border）
+  const mainWidth = main.offsetWidth;
+  const mainHeight = main.offsetHeight;
+
+  // 判断是否超出横向或纵向
+  const isOverflowing =
+    mainWidth + padding * 2 > screenWidth || mainHeight + padding * 2 > screenHeight;
+
+  if (isOverflowing) {
+    const scaleX = (screenWidth - padding * 2) / mainWidth;
+    const scaleY = (screenHeight - padding * 2) / mainHeight;
+    const scale = Math.min(scaleX, scaleY, 1); // 防止放大，只缩小
+
+    main.style.transform = `scale(${scale})`;
+    main.style.transformOrigin = "top center";
+  } else {
+    main.style.transform = "scale(1)";
+  }
+}
+
+// 初始化和窗口变化时调用
+window.addEventListener("load", scaleMainContainer);
+window.addEventListener("resize", scaleMainContainer);
+</script>
+
 <body>
     <main>
         <div id="title"><h1>somerui</h1></div>
