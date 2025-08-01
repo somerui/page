@@ -8,22 +8,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link rel="stylesheet" href="/style.css">
 <script>
-function fixMainWidth() {
+function resizeMainContainer() {
   const main = document.querySelector("main");
   if (!main) return;
 
-  const viewportWidth = window.innerWidth;
+  // 让 main 使用最大可视高度，但不要裁剪超出内容
+  main.style.height = "auto"; // 清除原来设置的固定高度
+  main.style.maxHeight = window.innerHeight + "px";
+  main.style.overflowY = "auto"; // 若内容超出，允许滚动
 
+  // 确保横向不超出
   main.style.width = "100%";
-  main.style.maxWidth = Math.min(800, viewportWidth - 20) + "px";
+  main.style.maxWidth = "100%";
+  main.style.margin = "0 auto";
+  main.style.boxSizing = "border-box";
 }
-
-window.addEventListener("DOMContentLoaded", () => {
-  resizeMainContainer();
-  fixMainWidth();
-});
-window.addEventListener("resize", fixMainWidth);
-window.addEventListener("orientationchange", fixMainWidth);
 
 </script>
 <body>
