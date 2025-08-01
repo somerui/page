@@ -8,36 +8,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link rel="stylesheet" href="/style.css">
 <script>
-function adjustMainVerticalPosition() {
+function fixMainNoInnerScroll() {
   const main = document.querySelector("main");
   if (!main) return;
 
-  // 重置 margin
-  main.style.marginTop = "0px";
-  main.style.marginBottom = "0px";
-  main.style.position = "static"; // 保证流式布局
+  // 确保无内滚动，先重置overflow
+  main.style.overflow = "visible";
   main.style.height = "auto";
+  main.style.maxHeight = "none";
+  main.style.position = "static";
+  main.style.marginTop = "0";
+  main.style.marginBottom = "0";
 
   requestAnimationFrame(() => {
     const viewportHeight = window.innerHeight;
-    const mainHeight = main.offsetHeight;
+    const mainHeight = main.scrollHeight;  // 用scrollHeight确保内容高度
 
     if (mainHeight < viewportHeight) {
-      // 内容不足一屏，高度撑不开整个视口 → 居中
+      // 内容较少：让 main 居中
       const margin = (viewportHeight - mainHeight) / 2;
-      main.style.marginTop = `${margin}px`;
-      main.style.marginBottom = `${margin}px`;
+      main.style.marginTop = margin + "px";
+      main.style.marginBottom = margin + "px";
     } else {
-      // 内容足够高 → 顶到页面边界，自然流动
-      main.style.marginTop = "0px";
-      main.style.marginBottom = "0px";
+      // 内容较多：main 顶住屏幕上下边界，页面滚动，main无内滚动
+      main.style.marginTop = "0";
+      main.style.marginBottom = "0";
     }
   });
 }
 
-window.addEventListener("DOMContentLoaded", adjustMainVerticalPosition);
-window.addEventListener("resize", adjustMainVerticalPosition);
-window.addEventListener("orientationchange", adjustMainVerticalPosition);
+window.addEventListener("DOMContentLoaded", fixMainNoInnerScroll);
+window.addEventListener("resize", fixMainNoInnerScroll);
+window.addEventListener("orientationchange", fixMainNoInnerScroll);
+
 
 </script>
 
