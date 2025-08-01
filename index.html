@@ -8,23 +8,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link rel="stylesheet" href="/style.css">
 <script>
-function resizeMainContainer() {
-  const main = document.querySelector("main");
-  if (!main) return;
+  function resizeMainContainer() {
+    const main = document.querySelector("main");
+    if (!main) return;
 
-  // 让 main 使用最大可视高度，但不要裁剪超出内容
-  main.style.height = "auto"; // 清除原来设置的固定高度
-  main.style.maxHeight = window.innerHeight + "px";
-  main.style.overflowY = "auto"; // 若内容超出，允许滚动
+    // 基本样式调整：确保 main 不自行撑破页面
+    main.style.height = "auto";
+    main.style.maxHeight = window.innerHeight + "px";
+    main.style.overflow = "auto";
+    main.style.width = "100%";
+    main.style.maxWidth = "100%";
+    main.style.margin = "0 auto";
+    main.style.boxSizing = "border-box";
 
-  // 确保横向不超出
-  main.style.width = "100%";
-  main.style.maxWidth = "100%";
-  main.style.margin = "0 auto";
-  main.style.boxSizing = "border-box";
-}
+    // 检查 main 是否溢出屏幕边界
+    const rect = main.getBoundingClientRect();
+    const overflowY = rect.top < 0 || rect.bottom > window.innerHeight;
+    const overflowX = rect.left < 0 || rect.right > window.innerWidth;
 
+    // 如果超出，就清空整个 body（或隐藏 main）
+    if (overflowX || overflowY) {
+      // 清空整页
+      document.body.innerHTML = "";
+      // 或者更温和方式：隐藏 main
+      // main.style.display = "none";
+      console.warn("Main container overflowed screen. Page cleared.");
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", resizeMainContainer);
+  window.addEventListener("resize", resizeMainContainer);
+  window.addEventListener("orientationchange", resizeMainContainer);
 </script>
+
 <body>
     <main>
         <div id="title"><h1>somerui</h1></div>
