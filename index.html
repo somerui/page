@@ -8,31 +8,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link rel="stylesheet" href="/style.css">
 <script>
-  function resizeMainContainer() {
-    const main = document.querySelector("main");
-    if (!main) return;
+function fixMainWidth() {
+  const main = document.querySelector("main");
+  if (!main) return;
 
-    const padding = 20; // 最小留边
-    const maxWidth = Math.min(800, window.innerWidth - padding * 2);
-    const maxHeight = window.innerHeight - padding * 2;
+  const viewportWidth = window.innerWidth;
 
-    // 限制 main 尺寸
-    main.style.maxWidth = maxWidth + "px";
-    main.style.maxHeight = maxHeight + "px";
-    main.style.overflowY = "auto";
+  main.style.width = "100%";
+  main.style.maxWidth = Math.min(800, viewportWidth - 20) + "px";
+}
 
-    // 居中显示并不占满整个屏幕
-    main.style.marginTop = padding + "px";
-    main.style.marginBottom = padding + "px";
-  }
+window.addEventListener("DOMContentLoaded", () => {
+  resizeMainContainer();
+  fixMainWidth();
+});
+window.addEventListener("resize", fixMainWidth);
+window.addEventListener("orientationchange", fixMainWidth);
 
-  // 初始化 & 动态监听
-  window.addEventListener("DOMContentLoaded", resizeMainContainer);
-  window.addEventListener("resize", resizeMainContainer);
-  window.addEventListener("orientationchange", resizeMainContainer);
 </script>
-
-
 <body>
     <main>
         <div id="title"><h1>somerui</h1></div>
