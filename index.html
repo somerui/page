@@ -8,42 +8,54 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link rel="stylesheet" href="/style.css">
 <script>
-  function resizeMainContainer() {
-    const main = document.querySelector("main");
-    if (!main) return;
 
-    // 基本样式调整：确保 main 不自行撑破页面
-    main.style.height = "auto";
-    main.style.maxHeight = window.innerHeight + "px";
-    main.style.overflow = "auto";
-    main.style.width = "100%";
-    main.style.maxWidth = "100%";
-    main.style.margin = "0 auto";
-    main.style.boxSizing = "border-box";
+function fixMainPosition() {
+  const main = document.querySelector("main");
+  if (!main) return;
 
-    // 检查 main 是否溢出屏幕边界
-    const rect = main.getBoundingClientRect();
-    const overflowY = rect.top < 0 || rect.bottom > window.innerHeight;
-    const overflowX = rect.left < 0 || rect.right > window.innerWidth;
+  const vh = window.innerHeight;
 
-    // 如果超出，就清空整个 body（或隐藏 main）
-    if (overflowX || overflowY) {
-      // 清空整页
-      document.body.innerHTML = "";
-      // 或者更温和方式：隐藏 main
-      // main.style.display = "none";
-      console.warn("Main container overflowed screen. Page cleared.");
-    }
+  // 先设置最大高度为视口高度减去上下边距
+  const maxHeight = vh - 20; // 10px top + 10px bottom
+
+  // 临时清空高度限制让它能测量实际内容
+  main.style.height = "auto";
+  main.style.maxHeight = "";
+  main.style.overflowY = "visible";
+
+  // 实际内容高度
+  const actualHeight = main.scrollHeight;
+
+  // 如果内容太高，强制内部滚动并锁定高度
+  if (actualHeight > maxHeight) {
+    main.style.height = maxHeight + "px";
+    main.style.overflowY = "auto";
+  } else {
+    // 正常内容，设定顶部/底部边距
+    main.style.height = actualHeight + "px";
+    main.style.overflowY = "visible";
   }
 
-  window.addEventListener("DOMContentLoaded", resizeMainContainer);
-  window.addEventListener("resize", resizeMainContainer);
-  window.addEventListener("orientationchange", resizeMainContainer);
+  // 设置垂直居中（上下 10px margin）
+  main.style.marginTop = "10px";
+  main.style.marginBottom = "10px";
+  main.style.marginLeft = "auto";
+  main.style.marginRight = "auto";
+}
+
+window.addEventListener("DOMContentLoaded", fixMainPosition);
+window.addEventListener("resize", fixMainPosition);
+window.addEventListener("orientationchange", fixMainPosition);
+
+
+
 </script>
 
 <body>
     <main>
+        
         <div id="title"><h1>somerui</h1></div>
+        
         <div id="links">
             <div>
                 <h1>Links</h1>

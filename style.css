@@ -164,5 +164,22 @@ a:hover {
 
 html, body {
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: #000;
+}
+
+main {
+  max-width: 800px;
+  width: 100%;
+  box-sizing: border-box;
+
+  /* 允许内滚动 */
+  overflow-y: auto;
+
+  /* 视觉上不要靠屏幕边太近 */
+  border-radius: 10px;
 }
 
