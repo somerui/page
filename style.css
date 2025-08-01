@@ -63,6 +63,21 @@ main {
 
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow-x: hidden;
+    max-width: 800px;
+  width: 100%;
+  box-sizing: border-box;
+
+  /* 允许内滚动 */
+  overflow-y: auto;
+
+  /* 视觉上不要靠屏幕边太近 */
+  border-radius: 10px;
+
 }
 
 h1, h2, h3, h4 {
@@ -161,25 +176,11 @@ a:hover {
     font-size: 1.2rem;
   }
 }
-
-html, body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  overflow-x: hidden;
-  background-color: #000;
+body::before {
+  content: '';
+  flex-grow: 1;
 }
-
-main {
-  max-width: 800px;
-  width: 100%;
-  box-sizing: border-box;
-
-  /* 允许内滚动 */
-  overflow-y: auto;
-
-  /* 视觉上不要靠屏幕边太近 */
-  border-radius: 10px;
+body::after {
+  content: '';
+  flex-grow: 1;
 }
-

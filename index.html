@@ -8,46 +8,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link rel="stylesheet" href="/style.css">
 <script>
-
-function fixMainPosition() {
+function adjustMainVerticalPosition() {
   const main = document.querySelector("main");
   if (!main) return;
 
-  const vh = window.innerHeight;
-
-  // 先设置最大高度为视口高度减去上下边距
-  const maxHeight = vh - 20; // 10px top + 10px bottom
-
-  // 临时清空高度限制让它能测量实际内容
+  // 重置 margin
+  main.style.marginTop = "0px";
+  main.style.marginBottom = "0px";
+  main.style.position = "static"; // 保证流式布局
   main.style.height = "auto";
-  main.style.maxHeight = "";
-  main.style.overflowY = "visible";
 
-  // 实际内容高度
-  const actualHeight = main.scrollHeight;
+  requestAnimationFrame(() => {
+    const viewportHeight = window.innerHeight;
+    const mainHeight = main.offsetHeight;
 
-  // 如果内容太高，强制内部滚动并锁定高度
-  if (actualHeight > maxHeight) {
-    main.style.height = maxHeight + "px";
-    main.style.overflowY = "auto";
-  } else {
-    // 正常内容，设定顶部/底部边距
-    main.style.height = actualHeight + "px";
-    main.style.overflowY = "visible";
-  }
-
-  // 设置垂直居中（上下 10px margin）
-  main.style.marginTop = "10px";
-  main.style.marginBottom = "10px";
-  main.style.marginLeft = "auto";
-  main.style.marginRight = "auto";
+    if (mainHeight < viewportHeight) {
+      // 内容不足一屏，高度撑不开整个视口 → 居中
+      const margin = (viewportHeight - mainHeight) / 2;
+      main.style.marginTop = `${margin}px`;
+      main.style.marginBottom = `${margin}px`;
+    } else {
+      // 内容足够高 → 顶到页面边界，自然流动
+      main.style.marginTop = "0px";
+      main.style.marginBottom = "0px";
+    }
+  });
 }
 
-window.addEventListener("DOMContentLoaded", fixMainPosition);
-window.addEventListener("resize", fixMainPosition);
-window.addEventListener("orientationchange", fixMainPosition);
-
-
+window.addEventListener("DOMContentLoaded", adjustMainVerticalPosition);
+window.addEventListener("resize", adjustMainVerticalPosition);
+window.addEventListener("orientationchange", adjustMainVerticalPosition);
 
 </script>
 
