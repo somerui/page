@@ -15,14 +15,13 @@
     U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+
 :root {
   --main-padding: clamp(10px, 5vw, 30px);
   --title-size: clamp(2.2rem, 6vw, 4rem);
   --text-size: clamp(0.9rem, 3vw, 1.1rem);
   --link-size: clamp(0.2rem, 2vw, 1.2rem);
 }
-
-
 body {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -42,7 +41,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 main {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -60,11 +58,9 @@ main {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 
 }
-
 h1,
 h2,
-h3,
-h4 {
+h3 {
   margin: 0.5rem 0;
   font-weight: 400;
 }
