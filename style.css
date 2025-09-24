@@ -130,11 +130,3 @@ h1 {
 a {
   font-size: var(--link-size);
 }
-
-@media (max-width: 480px) {
-  :root {
-    --title-size: 2.5rem;
-    --text-size: 1.1rem;
-    --link-size: 1.1rem;
-  }
-}
