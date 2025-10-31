@@ -4,13 +4,17 @@
   --text-size: clamp(0.9rem, 3vw, 1.1rem);
   --link-size: clamp(0.2rem, 2vw, 1.2rem);
 }
+@font-face {
+  font-family: Unifont;
+  src: url(https://mirrors.aliyun.com/gnu/unifont/unifont-17.0.01/unifont-17.0.01.otf);
+}
 body {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   margin: 0;
   padding: 0;
   height: 100vh;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Unifont', sans-serif;
 
   background-color: #000;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/bg.png);
