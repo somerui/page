@@ -6,7 +6,7 @@
 }
 @font-face {
   font-family: Unifont;
-  src: url(https://mirrors.aliyun.com/gnu/unifont/unifont-17.0.01/unifont-17.0.01.otf);
+  src: url(/unifont-17.0.01.otf);
 }
 body {
   -webkit-backdrop-filter: blur(10px);
