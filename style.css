@@ -12,7 +12,6 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-  background-color: #000;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/bg.png);
   background-repeat: no-repeat;
   background-position: center center;
@@ -25,7 +24,7 @@ body {
 
 main {
 	font-family: 'Unifont', sans-serif;
-	color: #000;
+	color: #fff;
 	line-height: 1.5em;
 }
 
