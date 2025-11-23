@@ -49,8 +49,15 @@ main {
 	font-size: 0.75em;
 }
 
+#crossline {
+	border: 1.5px solid #888;
+	width: 0px ;
+
+}
+
 a {color: #fff; text-decoration: none;}
 
 a:hover {text-decoration: underline;}
 
 hr {border: none; border-top: 1.5px solid #888}
+
