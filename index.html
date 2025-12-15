@@ -6,6 +6,18 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   	<title>somerui here.</title>
   	<link rel="stylesheet" href="/style.css" />
+	<script>
+		
+document.addEventListener('DOMContentLoaded', function() {
+  const font = new FontFace('Unifont', 'url(/unifont-17.0.01.otf)');
+  font.load().then(() => {
+    document.body.style.fontFamily = 'Unifont';
+  }).catch(() => {
+    document.body.innerHTML = '';
+  });
+});
+
+	</script>
 </head>
 <body>
   	<main>
