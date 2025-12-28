@@ -1,23 +1,28 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="atom.xsl"?>
+
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>somerui&apos;s muspost</title>
-        <link>somerui.xyz</link>
-        <description />
-        <language />
-        <managingEditor />
-        <webMaster />
+        <title>somerui</title>
+        <link>https://somerui.xyz</link>
+
+        <description>music posts</description>
+        <language>en</language>
         <category>music</category>
         <copyright>(c) somerui 2025. All Right Reserved.</copyright>
-        <docs />
-        <pubDate>14 Dec 2025 14:18:52 GMT</pubDate>
+        <pubDate>Sat, 14 Dec 2025 14:18:52 GMT</pubDate>
+
         <item>
             <title>asd</title>
-            <description>New&lt;p&gt;listen on soundcloud&lt;/p&gt;&#x0D;&#x0A;  &lt;p&gt;download on modarchive&lt;/p&gt;&lt;BR&gt;&lt;p name=&quot;ADV&quot;&gt;&lt;A HREF=&quot;http://www.amlpages.com/home_rssme.php&quot; TARGET=_blank TITLE=&quot;Post created by RSSme - free visual RSS editor&quot;&gt;&lt;IMG SRC=&quot;http://amlpages.com/images/rssme_ico_32.png&quot; STYLE=&quot;{float: left;}&quot; BORDER=0 ALT=&quot;RSSme Home&quot; HSPACE=10 WIDTH=22&gt;&lt;FONT COLOR=maroon SIZE=-1 FACE=&quot;Trebuchet MS;&quot;&gt;&amp;nbsp;&lt;CODE&gt;</description>
-            <pubDate>14 Dec 2025 14:18:52 GMT</pubDate>
-            <link>http://somerui.xyz</link>
+            <description>
+                <main><h1>new rss post test</h1><br/></main>
+                
+            </description>
+
+            <link>https://somerui.xyz</link>
             <author>somerui</author>
             <guid>eca5351c9e164585855ba100bd8de24f</guid>
         </item>
+
     </channel>
 </rss>
