@@ -14,6 +14,7 @@ body {
   	display: flex;
   	justify-content: center;
   	align-items: center;
+	backdrop-filter: blur(5px);
 	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/bg.png);
   	background-repeat: no-repeat;
   	background-position: center center;
@@ -37,11 +38,13 @@ main {
 }
 
 #links {
-  	border: 1.5px solid #888;
-  	padding: 1.5em;
-  	background-color: #111;
-  	width: 100%;
-  	box-sizing: border-box;
+	backdrop-filter: blur(10px);
+	border: 1.5px solid #888;
+	padding: 1.5em;
+	background-color: rgba(0, 0, 0, 0.8);
+
+	width: 100%;
+	box-sizing: border-box;
 }
 
 @media (max-width: 600px) {
@@ -57,9 +60,26 @@ main {
     	padding: 1em;
   	}
 }
-a {color: #fff; text-decoration: none;}
+a {
+	color: #fff;
+	text-decoration: none;
+	position: relative;
+}
 
-a:hover {text-decoration: underline;}
+a::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 0;
+	height: 1.5px;
+	background-color: #fff;
+	transition: width 0.2s ease-out;
+}
+
+a:hover::after {
+	width: 100%;
+}
 
 hr {border: none; border-top: 1.5px solid #888}
 
