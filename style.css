@@ -49,15 +49,15 @@ main {
 
 @media (max-width: 600px) {
   	body {
-    	background-size: 120%;
+    		background-size: 120%;
   	}
 
   	#title {
-    	font-size: 1.2em;
+    		font-size: 1.2em;
   	}
 
   	#links {
-    	padding: 1em;
+    		padding: 1em;
   	}
 }
 a {
