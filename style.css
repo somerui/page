@@ -15,10 +15,10 @@ body {
         justify-content: center;
         align-items: center;
 	backdrop-filter: blur(5px);
-	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/bg.png);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://cdn.libravatar.org/avatar/e30b421f6ca741510fe4aa6349b53b5f4af766dfdc6b49999900c6134f863f32?s=512) ;
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: 50%;
+        background-size: 100%;
         background-attachment: fixed;
         height: 100vh;
         width: 100vw;
