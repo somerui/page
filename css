@@ -1,8 +1,12 @@
 @font-face {
-        font-family: Unifont;
-        src: url(/unifont-17.0.01.otf);
+        font-family: SIL;
+        src: url(/UnicodeBMPFallback.ttf);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+h1 {
+	font-weight: lighter;
+}
 
 html, body {
 	margin: 0;
@@ -26,7 +30,8 @@ body {
 }
 
 main {
-        font-family: 'Unifont', sans-serif;
+        font-family: "Unifont", sans-serif;
+	font-weight: normal;
         color: #fff;
         line-height: 1.5em;
         max-width: 700px;
@@ -34,6 +39,7 @@ main {
 }
 #title {
         font-size: 1.5em;
+	font-weight: bolder;
         padding-bottom: 0.75em;
 }
 
