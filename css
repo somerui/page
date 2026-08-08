@@ -3,13 +3,8 @@
         src: url(/UnicodeBMPFallback.ttf);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
-h1 {
-	font-weight: lighter;
-}
-
 html, body {
-	margin: 0;
+        margin: 0;
         padding: 0;
 }
 
@@ -18,20 +13,20 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-	backdrop-filter: blur(5px);
-	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://cdn.libravatar.org/avatar/e30b421f6ca741510fe4aa6349b53b5f4af766dfdc6b49999900c6134f863f32?s=512) ;
+        backdrop-filter: blur(5px);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://cdn.libravatar.org/avatar/e30b421f6ca741510fe4aa6349b53b5f4af766dfdc6b49999900c6134f863f32?s=512) ;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: 100%;
         background-attachment: fixed;
         height: 100vh;
         width: 100vw;
-	font-size: clamp(14px, 3vw, 22px);
+        font-size: clamp(14px, 3vw, 22px);
 }
 
 main {
-        font-family: "Unifont", sans-serif;
-	font-weight: normal;
+        font-family: monospace;
+        font-weight: normal;
         color: #fff;
         line-height: 1.5em;
         max-width: 700px;
@@ -39,18 +34,18 @@ main {
 }
 #title {
         font-size: 1.5em;
-	font-weight: bolder;
+        font-weight: lighter;
         padding-bottom: 0.75em;
 }
 
 #links {
-	backdrop-filter: blur(10px);
-	border: 1.5px solid #888;
-	padding: 1.5em;
-	background-color: rgba(0, 0, 0, 0.8);
-	max-width: 100%;
-	width: 100%;
-	box-sizing: border-box;
+        backdrop-filter: blur(10px);
+        border: 1.5px solid #888;
+        padding: 1.5em;
+        background-color: rgba(0, 0, 0, 0.8);
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
 }
 
 @media (max-width: 600px) {
@@ -67,24 +62,24 @@ main {
         }
 }
 a {
-	color: #fff;
-	text-decoration: none;
-	position: relative;
+        color: #fff;
+        text-decoration: none;
+        position: relative;
 }
 
 a::after {
-	content: '';
-	position: absolute;
-	bottom: -2px;
-	left: 0;
-	width: 0;
-	height: 1.5px;
-	background-color: #fff;
-	transition: width 0.2s ease-out;
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1.5px;
+        background-color: #fff;
+        transition: width 0.2s ease-out;
 }
 
 a:hover::after {
-	width: 100%;
+        width: 100%;
 }
 
 hr {border: none; border-top: 1.5px solid #888}
