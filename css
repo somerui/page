@@ -1,6 +1,6 @@
 @font-face {
-        font-family: SIL;
-        src: url(/UnicodeBMPFallback.ttf);
+	font-family: Unifont;
+	src: url(/unifont-17.0.01.otf);
 }
 
 html, body {
@@ -25,20 +25,21 @@ body {
 }
 
 main {
-        font-family: monospace;
+        font-family: Unifont;
         font-weight: normal;
         color: #fff;
         line-height: 1.5em;
         max-width: 700px;
         padding: 0 1.5rem;  
 }
-#title {
+
+header {
         font-size: 1.5em;
         font-weight: lighter;
         padding-bottom: 0.75em;
 }
 
-#links {
+nav {
         backdrop-filter: blur(10px);
         border: 1.5px solid #888;
         padding: 1.5em;
