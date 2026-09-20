@@ -1,0 +1,13 @@
+body {
+	max-width: 1100px;
+	margin: 40px auto;
+	padding: 0 20px;
+	font-family: sans-serif;
+	line-height: 1.6;
+	background-color: #1f1f1f;
+	color: #ccc;
+}
+a{color: white;}
+a:hover{color: aqua;}
+h2{color: white;}
+#hidden{color: #1f1f1f;}
