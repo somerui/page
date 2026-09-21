@@ -4,10 +4,12 @@ body {
 	padding: 0 20px;
 	font-family: sans-serif;
 	line-height: 1.6;
-	background-color: #1f1f1f;
+	background-color: black;
 	color: #ccc;
+	font-family: monospace;
 }
-a{color: white;}
+a{color: darkcyan;text-decoration: none;}
 a:hover{color: aqua;}
 h2{color: white;}
-#hidden{color: #1f1f1f;}
+#hidden{color: black;}
+svg{display: flex;justify-content: center;align-items: center;width: 100%;margin: 0 auto;width: 50%;height: auto;max-width: 100%;display: block;}
